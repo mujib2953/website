@@ -3,6 +3,55 @@
     <head>
         <meta charset="utf-8">
         <title>My Site</title>
+
+
+        <script src="https://www.gstatic.com/firebasejs/3.6.9/firebase.js"></script>
+        <script>
+            // Initialize Firebase
+            var config = {
+                apiKey: "AIzaSyAGTwZIbcgCToM49vt4W2GYfWH1XsF7644",
+                authDomain: "test-3823e.firebaseapp.com",
+                databaseURL: "https://test-3823e.firebaseio.com",
+                storageBucket: "test-3823e.appspot.com",
+                messagingSenderId: "549062744875"
+            };
+            firebase.initializeApp(config);
+
+
+            // Get a reference to the database service
+            var database = firebase.database();
+
+
+            function addElem( p_obj ) {
+                firebase.database().ref( '/elements' ).set({
+                    "proton": 1,
+                    "Symbol": "H",
+            		"name":"Hydrogen",
+            		"type":"NONMETALS",
+            		"block":"S",
+                    "boilingPoint": -252.9,
+                    "Electronegativity": 2.20,
+                    "Density": 0.09,
+                    // AtomicMass: 1.008,
+                    "AtomicMass": 1.0079,
+                    "IonizationEnergy": 1312.0,
+                    "AtomicRadius": 0.25,
+                    "AtomicRadius_InPicometers": 53,
+                    "MeltingPoint": -259.1,
+                    "ElementColor": "rgb(235,235,235)",
+                });
+                console.log( 'data is added to firebase.' );
+            };
+            addElem.call( this );
+
+            function writeUserData(userId, name, email, imageUrl) {
+                firebase.database().ref('users/' + userId).set({
+                    username: name,
+                    email: email,
+                    profile_picture : imageUrl
+                });
+            }
+        </script>
     </head>
     <body>
         <h1>Hola Just welcome to the site.</h1>
