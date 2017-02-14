@@ -23,7 +23,7 @@
 
 
             function addElem( p_obj ) {
-                firebase.database().ref( '/elements' ).set({
+                firebase.database().ref( '/elements/' + 'Hydrogen' ).set({
                     "proton": 1,
                     "Symbol": "H",
             		"name":"Hydrogen",
