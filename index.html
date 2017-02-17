@@ -4,56 +4,70 @@
         <meta charset="utf-8">
         <title>My Site</title>
 
+        <!-- Googles Fonts  -->
+        <link href="https://fonts.googleapis.com/css?family=Caveat+Brush|Pacifico|Orbitron|Kaushan+Script|Alfa+Slab+One|Chewy" rel="stylesheet">
 
+        <!-- My Stylings -->
+        <link href="custom/css/common.css" rel="stylesheet">
+
+        <!-- jQuery -->
+        <script type="text/javascript" src="vendor/jQuery/jquery-3.1.1.min.js" ></script>
+
+        <!-- firebase -->
         <script src="https://www.gstatic.com/firebasejs/3.6.9/firebase.js"></script>
-        <script>
-            // Initialize Firebase
-            var config = {
-                apiKey: "AIzaSyAGTwZIbcgCToM49vt4W2GYfWH1XsF7644",
-                authDomain: "test-3823e.firebaseapp.com",
-                databaseURL: "https://test-3823e.firebaseio.com",
-                storageBucket: "test-3823e.appspot.com",
-                messagingSenderId: "549062744875"
-            };
-            firebase.initializeApp(config);
+        <script src="https://www.gstatic.com/firebasejs/3.6.9/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/3.6.9/firebase-auth.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/3.6.9/firebase-database.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/3.6.9/firebase-messaging.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/3.6.9/firebase-storage.js"></script>
 
+        <!-- bootstrap -->
+        <script src="vendor/tether/js/tether.min.js" charset="utf-8"></script>
+        <link rel="stylesheet" href="vendor/bootstrap/css/bootstrap.min.css">
+        <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
 
-            // Get a reference to the database service
-            var database = firebase.database();
-
-
-            function addElem( p_obj ) {
-                firebase.database().ref( '/elements/' + 'Hydrogen' ).set({
-                    "proton": 1,
-                    "Symbol": "H",
-            		"name":"Hydrogen",
-            		"type":"NONMETALS",
-            		"block":"S",
-                    "boilingPoint": -252.9,
-                    "Electronegativity": 2.20,
-                    "Density": 0.09,
-                    // AtomicMass: 1.008,
-                    "AtomicMass": 1.0079,
-                    "IonizationEnergy": 1312.0,
-                    "AtomicRadius": 0.25,
-                    "AtomicRadius_InPicometers": 53,
-                    "MeltingPoint": -259.1,
-                    "ElementColor": "rgb(235,235,235)",
-                });
-                console.log( 'data is added to firebase.' );
-            };
-            addElem.call( this );
-
-            function writeUserData(userId, name, email, imageUrl) {
-                firebase.database().ref('users/' + userId).set({
-                    username: name,
-                    email: email,
-                    profile_picture : imageUrl
-                });
-            }
-        </script>
     </head>
     <body>
-        <h1>Hola Just welcome to the site.</h1>
+        <div class="h">
+            <h1 class="fMarker">Hola!.. Just welcome to the site.</h1>
+            <h3 class="fCursive"> This is the famous ChemLab. </h3>
+
+            <br />
+            <div>
+                <p class="fBrush"> This is to just Test the fonts. </p>
+                <p class="fCursive"> This is to just Test the fonts. </p>
+                <p class="fSquare"> This is to just Test the fonts. </p>
+                <p class="fCursivePen"> This is to just Test the fonts. </p>
+                <p class="fThick"> This is to just Test the fonts. </p>
+                <p class="fChew"> This is to just Test the fonts. </p>
+            </div>
+            <input type="file" id="files" name="files[]" multiple />
+
+        </div>
+
+
+        <div class="container">
+            <div class="jumbotron myJumbo">
+                <!-- Header -->
+                <div class="myHeader">
+                    Header
+                </div>
+                <!-- Body -->
+                <div class="myBody">
+                    Body
+                </div>
+
+                <!-- footer -->
+                <div class="myFooter">
+                    Footer
+                </div>
+            </div>
+        </div>
+
+        <!-- My JS  -->
+        <script src="custom/js/firebaseConfig.js" ></script>
+        <!-- <script src="custom/js/AddElemToFirebase.js"></script> -->
+        <script src="custom/js/readingData.js"></script>
+        <script src="custom/js/storageTest.js"></script>
     </body>
 </html>

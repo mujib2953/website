@@ -1791,9 +1791,9 @@ var PeriodicTable = [{
     },
 ];
 
-PeriodicTable.getElementById = function(id) 
+PeriodicTable.getElementById = function(id)
 {
-    for (var i = 0; i < PeriodicTable.length; i++) 
+    for (var i = 0; i < PeriodicTable.length; i++)
 	{
         var temp = PeriodicTable[i];
         if (temp.proton == id)
@@ -1802,9 +1802,9 @@ PeriodicTable.getElementById = function(id)
     return false;
 }
 
-PeriodicTable.getElementByName = function(name) 
+PeriodicTable.getElementByName = function(name)
 {
-    for (var i = 0; i < PeriodicTable.length; i++) 
+    for (var i = 0; i < PeriodicTable.length; i++)
 	{
         var temp = PeriodicTable[i];
         if (temp.Symbol == name)
@@ -1815,7 +1815,7 @@ PeriodicTable.getElementByName = function(name)
 
 PeriodicTable.findByName = function(name)
 {
-    for (var i = 0; i < PeriodicTable.length; i++) 
+    for (var i = 0; i < PeriodicTable.length; i++)
 	{
         var temp = PeriodicTable[i];
         if (temp.name == name)
